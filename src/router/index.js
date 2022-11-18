@@ -1,22 +1,22 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import SearchJoke from '@/views/SearchJoke.vue';
-import RandomJoke from '@/views/RandomJoke.vue';
-import FavouriteJokes from '@/views/FavouriteJokes.vue';
+import SearchJokePage from '@/views/SearchJokePage.vue';
+import RandomJokePage from '@/views/RandomJokePage.vue';
+import FavouriteJokesPage from '@/views/FavouriteJokesPage.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      component: SearchJoke
+      component: SearchJokePage
     },
     {
       path: '/random',
-      component: RandomJoke
+      component: RandomJokePage
     },
     {
       path: '/favourites',
-      component: FavouriteJokes
+      component: FavouriteJokesPage
     }
   ]
 });

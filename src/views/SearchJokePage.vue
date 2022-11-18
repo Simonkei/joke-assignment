@@ -1,12 +1,14 @@
 <template>
   <SearchForm @search-input="searchJoke" />
-
-  <div class="container">
+  <div v-if="useJoke.jokes.length > 0" class="container">
     <JokeCard
       v-for="jokeObj in useJoke.jokes"
       :key="jokeObj.id"
       :jokeObj="jokeObj"
     />
+  </div>
+  <div class="notFound" v-else>
+    <h1>Der findes ingen jokes med det søgeord.</h1>
   </div>
 </template>
 
@@ -38,8 +40,8 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  max-width: 640px;
-  margin: 20px auto;
+.notFound {
+  text-align: center;
+  color: white;
 }
 </style>

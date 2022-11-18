@@ -8,7 +8,6 @@
 <style scoped>
 header {
   text-align: center;
-  background: #e7e7e7;
   padding-top: 20px;
   display: flex;
   justify-content: center;
@@ -24,7 +23,7 @@ header h1 {
   font-size: 2em;
   padding-top: 25px;
   margin-left: 15px;
-  color: #777;
+  color: white;
   transform: rotate(2deg);
   cursor: pointer;
 }

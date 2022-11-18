@@ -5,16 +5,12 @@
     </div>
     <i
       v-if="isFavourite"
-      @click="removeJokeFromFavouriteList(jokeObj.id)"
+      @click="removeJokeFromFavouriteList(jokeObj)"
       class="material-icons favouriteClass"
     >
       star
     </i>
-    <i
-      v-else
-      @click="addJokeToFavouriteList(jokeObj.id)"
-      class="material-icons"
-    >
+    <i v-else @click="addJokeToFavouriteList(jokeObj)" class="material-icons">
       star
     </i>
   </BaseCard>
@@ -50,11 +46,18 @@ i {
   top: 0;
   right: 0;
   margin: 16px;
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
 }
 .text {
   width: 95%;
 }
 .favouriteClass {
-  color: rgb(255, 187, 0);
+  color: #ffd859;
+}
+i {
 }
 </style>

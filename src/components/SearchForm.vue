@@ -27,7 +27,6 @@ export default {
 
 <style scoped>
 .form {
-  background: #e7e7e7;
   padding: 20px;
 }
 form {

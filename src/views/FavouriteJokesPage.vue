@@ -1,6 +1,10 @@
 <template>
-  <div>
-    <JokeCard />
+  <div class="container">
+    <JokeCard
+      v-for="jokeObj in displayFavouriteJokes"
+      :key="jokeObj.id"
+      :jokeObj="jokeObj"
+    />
   </div>
 </template>
 
@@ -8,13 +12,13 @@
 import JokeCard from '@/components/JokeCard.vue';
 import { useJokeStore } from '@/stores/JokeStore.js';
 import { mapState } from 'pinia';
-import axios from 'axios';
+
 export default {
+  computed: {
+    ...mapState(useJokeStore, ['displayFavouriteJokes'])
+  },
   components: {
     JokeCard
-  },
-  computed: {
-    ...mapState(useJokeStore, ['favouritJokes'])
   }
 };
 </script>
