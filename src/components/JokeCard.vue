@@ -64,6 +64,4 @@ i {
 .favouriteClass {
   color: #ffff00c9;
 }
-i {
-}
 </style>

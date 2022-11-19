@@ -12,6 +12,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: rgb(69, 69, 69);
 }
 header img {
   max-width: 75px;

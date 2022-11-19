@@ -1,11 +1,9 @@
 <template>
-  <div>
-    <div class="form">
-      <form @submit.prevent="emitSearchInput">
-        <input type="text" placeholder="Søg efter jokes" v-model="input" />
-        <BaseButton type="sumbit">Søg</BaseButton>
-      </form>
-    </div>
+  <div class="form">
+    <form @submit.prevent="emitSearchInput">
+      <input type="text" placeholder="Søg efter jokes" v-model="input" />
+      <BaseButton type="sumbit">Søg</BaseButton>
+    </form>
   </div>
 </template>
 
@@ -26,12 +24,9 @@ export default {
 </script>
 
 <style scoped>
-.form {
-  padding: 20px;
-}
 form {
   max-width: 400px;
-  margin: 0 auto;
+  margin: 20px auto;
   display: grid;
   grid-template-columns: 3fr 1fr;
   gap: 10px;

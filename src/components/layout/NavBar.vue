@@ -49,16 +49,16 @@ export default {
 
 <style scoped>
 nav {
-  height: 30px;
-  text-align: center;
+  height: 50px;
   padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: rgb(69, 69, 69);
 }
 .nav-link {
   padding: 8px 16px;
-  margin: 0 16px;
+  margin: 0px 32px;
   color: white;
   position: relative;
 }

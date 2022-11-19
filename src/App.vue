@@ -24,8 +24,7 @@ export default {
 <style scoped>
 main {
   overflow: hidden;
-  background: #676ab1;
-  background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
+  background: #4f5151;
   width: 100%;
   position: absolute;
   z-index: -1;

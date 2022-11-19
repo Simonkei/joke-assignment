@@ -1,26 +1,26 @@
 <template>
-  <SearchForm @search-input="searchJoke" />
   <div>
-    <PaginationNumber
-      @pageChanged="fetchPage"
+    <SearchForm @search-input="searchJoke" />
+    <Pagination
+      v-if="useJoke.jokes.length > 0"
+      @pagechanged="fetchPage"
       :totalPages="useJoke.totalPages"
       :currentPage="useJoke.currentPage"
     />
+
+    <div class="notFound" v-else>
+      <h1>Der findes ingen jokes med det søgeord.</h1>
+    </div>
   </div>
-  <div v-if="useJoke.jokes.length > 0" class="container">
-    <JokeCard
-      v-for="jokeObj in useJoke.jokes"
-      :key="jokeObj.id"
-      :jokeObj="jokeObj"
-    />
-  </div>
-  <div class="notFound" v-else>
-    <h1>Der findes ingen jokes med det søgeord.</h1>
-  </div>
+  <JokeCard
+    v-for="jokeObj in useJoke.jokes"
+    :key="jokeObj.id"
+    :jokeObj="jokeObj"
+  />
 </template>
 
 <script>
-import PaginationNumber from '@/components/PaginationNumbers.vue';
+import Pagination from '@/components/Pagination.vue';
 import SearchForm from '@/components/SearchForm.vue';
 import JokeCard from '@/components/JokeCard.vue';
 import { useJokeStore } from '@/stores/JokeStore.js';
@@ -47,7 +47,7 @@ export default {
   components: {
     SearchForm,
     JokeCard,
-    PaginationNumber
+    Pagination
   }
 };
 </script>
