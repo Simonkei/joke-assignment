@@ -27,8 +27,8 @@
     >
       Favorit Jokes
 
-      <BaseBadge v-if="favouriteJokesListLength">
-        {{ favouriteJokesListLength }}
+      <BaseBadge v-if="displayFavouriteJokesListLength">
+        {{ displayFavouriteJokesListLength }}
       </BaseBadge>
     </router-link>
   </nav>
@@ -39,9 +39,9 @@ import { useJokeStore } from '@/stores/JokeStore.js';
 import { mapState } from 'pinia';
 export default {
   computed: {
-    ...mapState(useJokeStore, ['favouriteJokes']),
-    favouriteJokesListLength() {
-      return this.favouriteJokes.length;
+    ...mapState(useJokeStore, ['displayFavouriteJokes']),
+    displayFavouriteJokesListLength() {
+      return this.displayFavouriteJokes.length;
     }
   }
 };

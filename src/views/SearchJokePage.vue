@@ -1,5 +1,12 @@
 <template>
   <SearchForm @search-input="searchJoke" />
+  <div>
+    <PaginationNumber
+      @pageChanged="fetchPage"
+      :totalPages="useJoke.totalPages"
+      :currentPage="useJoke.currentPage"
+    />
+  </div>
   <div v-if="useJoke.jokes.length > 0" class="container">
     <JokeCard
       v-for="jokeObj in useJoke.jokes"
@@ -13,6 +20,7 @@
 </template>
 
 <script>
+import PaginationNumber from '@/components/PaginationNumbers.vue';
 import SearchForm from '@/components/SearchForm.vue';
 import JokeCard from '@/components/JokeCard.vue';
 import { useJokeStore } from '@/stores/JokeStore.js';
@@ -25,7 +33,11 @@ export default {
   },
   methods: {
     searchJoke(searchInput) {
-      this.useJoke.fetchJokes(searchInput);
+      this.useJoke.setSearchInput(searchInput);
+      this.useJoke.fetchJokes(1);
+    },
+    fetchPage(page) {
+      this.useJoke.goToFetchedPage(page);
     }
   },
   mounted() {
@@ -34,7 +46,8 @@ export default {
 
   components: {
     SearchForm,
-    JokeCard
+    JokeCard,
+    PaginationNumber
   }
 };
 </script>

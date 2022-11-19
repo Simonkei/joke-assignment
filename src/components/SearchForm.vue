@@ -46,7 +46,7 @@ form input {
 }
 form input:hover,
 form input:focus-visible {
-  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
   outline: none;
 }
 </style>

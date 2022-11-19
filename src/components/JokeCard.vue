@@ -1,5 +1,5 @@
 <template>
-  <BaseCard>
+  <BaseCard class="card">
     <div class="text">
       {{ jokeObj.joke }}
     </div>
@@ -29,17 +29,23 @@ export default {
     ])
   },
   computed: {
-    ...mapState(useJokeStore, ['favouriteJokes']),
+    ...mapState(useJokeStore, [
+      'displayFavouriteJokes',
+      'getFavouriteJokeIndex'
+    ]),
     isFavourite() {
-      return this.favouriteJokes.includes(this.jokeObj.id);
+      return this.getFavouriteJokeIndex(this.jokeObj) > -1;
     }
   }
 };
 </script>
 
 <style scoped>
+.card {
+  width: 100%;
+}
 i {
-  font-size: 1.4em;
+  font-size: 1.6em;
   cursor: pointer;
   color: #bbb;
   position: absolute;
@@ -56,7 +62,7 @@ i {
   width: 95%;
 }
 .favouriteClass {
-  color: #ffd859;
+  color: #ffff00c9;
 }
 i {
 }
