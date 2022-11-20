@@ -1,5 +1,5 @@
 <template>
-  <BaseCard class="card">
+  <BaseCard>
     <div class="text">
       {{ jokeObj.joke }}
     </div>
@@ -41,9 +41,6 @@ export default {
 </script>
 
 <style scoped>
-.card {
-  width: 100%;
-}
 i {
   font-size: 1.6em;
   cursor: pointer;
@@ -59,9 +56,9 @@ i {
   -o-user-select: none;
 }
 .text {
-  width: 95%;
+  width: 90%;
 }
 .favouriteClass {
-  color: #ffff00c9;
+  color: #ffd859;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <JokeCard v-if="joke" :jokeObj="joke" />
+    <JokeCard class="card" v-if="joke" :jokeObj="joke" />
     <div class="button">
       <BaseButton @click="fetchRandomJoke">New Joke</BaseButton>
     </div>
@@ -31,7 +31,18 @@ export default {
 };
 </script>
 <style scoped>
+.container {
+  margin: 100px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+.card {
+  width: 500px;
+}
 .button {
   text-align: center;
+  margin-top: 50px;
 }
 </style>

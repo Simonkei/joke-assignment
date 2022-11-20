@@ -3,6 +3,7 @@
     <div v-if="totalPages > 5">
       <li class="pagination-item">
         <button
+          class="pagination-button"
           type="button"
           @click="onClickPreviousPage"
           :disabled="isInFirstPage"
@@ -31,6 +32,7 @@
     <div v-else>
       <li v-for="page in totalPages" class="pagination-item" :key="page">
         <button
+          class="pagination-button"
           type="button"
           @click="onClickPage(page)"
           :disabled="page == currentPage"
@@ -121,13 +123,18 @@ export default {
   display: inline-block;
 }
 .pagination-item button {
+  color: rgb(255, 255, 255);
+  float: left;
+  background: inherit;
+  border: none;
+  text-decoration: none;
   padding: 10px 16px;
   cursor: pointer;
 }
 
 .active {
-  background-color: #4aae9b;
-  color: #ffffff;
-  cursor: auto;
+  background-color: #ffd859 !important;
+  color: black !important;
+  border-radius: 5px;
 }
 </style>

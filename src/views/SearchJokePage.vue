@@ -1,22 +1,22 @@
 <template>
-  <div>
-    <SearchForm @search-input="searchJoke" />
-    <Pagination
-      v-if="useJoke.jokes.length > 0"
-      @pagechanged="fetchPage"
-      :totalPages="useJoke.totalPages"
-      :currentPage="useJoke.currentPage"
+  <SearchForm @search-input="searchJoke" />
+  <div class="grid">
+    <JokeCard
+      class="card"
+      v-for="jokeObj in useJoke.jokes"
+      :key="jokeObj.id"
+      :jokeObj="jokeObj"
     />
-
-    <div class="notFound" v-else>
-      <h1>Der findes ingen jokes med det søgeord.</h1>
-    </div>
   </div>
-  <JokeCard
-    v-for="jokeObj in useJoke.jokes"
-    :key="jokeObj.id"
-    :jokeObj="jokeObj"
+  <Pagination
+    v-if="useJoke.jokes.length > 0"
+    @pagechanged="fetchPage"
+    :totalPages="useJoke.totalPages"
+    :currentPage="useJoke.currentPage"
   />
+  <div class="notFound" v-else>
+    <h1>Der findes ingen jokes med det søgeord.</h1>
+  </div>
 </template>
 
 <script>
@@ -53,8 +53,20 @@ export default {
 </script>
 
 <style scoped>
+.card {
+  margin: 0 8px;
+}
 .notFound {
   text-align: center;
   color: white;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+@media only screen and (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
 }
 </style>

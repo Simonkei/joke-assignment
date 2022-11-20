@@ -27,7 +27,7 @@
     >
       Favorit Jokes
 
-      <BaseBadge v-if="displayFavouriteJokesListLength">
+      <BaseBadge class="badge" v-if="displayFavouriteJokesListLength">
         {{ displayFavouriteJokesListLength }}
       </BaseBadge>
     </router-link>
@@ -50,7 +50,7 @@ export default {
 <style scoped>
 nav {
   height: 50px;
-  padding: 20px;
+  padding-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,9 +61,15 @@ nav {
   margin: 0px 32px;
   color: white;
   position: relative;
+  white-space: nowrap;
 }
 .nav-link:hover,
 .nav-link:active {
   text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.9);
+}
+@media only screen and (max-width: 600px) {
+  .nav-link {
+    padding: 8px 0;
+  }
 }
 </style>

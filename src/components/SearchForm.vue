@@ -26,7 +26,7 @@ export default {
 <style scoped>
 form {
   max-width: 400px;
-  margin: 20px auto;
+  margin: 30px auto;
   display: grid;
   grid-template-columns: 3fr 1fr;
   gap: 10px;

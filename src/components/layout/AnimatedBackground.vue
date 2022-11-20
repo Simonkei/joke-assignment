@@ -30,7 +30,7 @@
   list-style: none;
   width: 20px;
   height: 20px;
-  background: url('@/assets/crazy.png');
+  background: url('@/assets/laugh.png');
   background-size: contain;
   background-repeat: no-repeat;
   animation: animate 25s linear infinite;
@@ -122,7 +122,7 @@
   100% {
     transform: translateY(-1000px) rotate(720deg);
     opacity: 0;
-    border-radius: 50%;
+    border-radius: 0;
   }
 }
 </style>
