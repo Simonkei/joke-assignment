@@ -6,13 +6,6 @@
     </section>
     <section id="content">
       <AnimatedBackground />
-      <!-- <div>
-        <router-view v-slot="{ Component }">
-          <transition name="fade" mode="out-in">
-            <component :is="Component" />
-          </transition>
-        </router-view>
-      </div> -->
       <router-view></router-view>
     </section>
   </main>
@@ -36,13 +29,5 @@ main {
   position: absolute;
   z-index: -1;
   min-height: 100vh;
-}
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s ease;
-}
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
 }
 </style>
